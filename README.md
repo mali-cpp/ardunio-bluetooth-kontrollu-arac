@@ -1,77 +1,77 @@
-# ardunio-bluetooth-kontrollu-arac
+# ardunio-bluetooth-kontrollu-arac &nbsp;
 
-#include <SoftwareSerial.h>
-// RX = 10 , TX = 11
-SoftwareSerial mySerial(10, 11);
-char data;
-#define sol_motor_1 4
-#define sol_motor_2 5
-#define sag_motor_1 2
-#define sag_motor_2 3
-void setup() {
-pinMode(5,OUTPUT);
-pinMode(2,OUTPUT);
-pinMode(3,OUTPUT);
-pinMode(4,OUTPUT);
-Serial.begin(9600);
-mySerial.begin(9600);
-}
-void ileri()
-{
-digitalWrite(sol_motor_1, HIGH);
-digitalWrite(sol_motor_2, LOW);
-digitalWrite(sag_motor_1, LOW);
-digitalWrite(sag_motor_2, HIGH);
-}
-void geri()
-{
-digitalWrite(sol_motor_1, LOW);
-digitalWrite(sol_motor_2, HIGH);
-digitalWrite(sag_motor_1, HIGH);
-digitalWrite(sag_motor_2, LOW);
-}
-void sol()
-{
-digitalWrite(sol_motor_1, HIGH);
-digitalWrite(sol_motor_2, LOW);
-digitalWrite(sag_motor_1, HIGH);
-digitalWrite(sag_motor_2, LOW);
-}
+#include <SoftwareSerial.h>&nbsp;
+// RX = 10 , TX = 11&nbsp;
+SoftwareSerial mySerial(10, 11);&nbsp;
+char data;&nbsp;
+#define sol_motor_1 4&nbsp;
+#define sol_motor_2 5&nbsp;
+#define sag_motor_1 2&nbsp;
+#define sag_motor_2 3&nbsp;
+void setup() {&nbsp;
+pinMode(5,OUTPUT);&nbsp;
+pinMode(2,OUTPUT);&nbsp;
+pinMode(3,OUTPUT);&nbsp;
+pinMode(4,OUTPUT);&nbsp;
+Serial.begin(9600);&nbsp;
+mySerial.begin(9600);&nbsp;
+}&nbsp;
+void ileri()&nbsp;
+{&nbsp;
+digitalWrite(sol_motor_1, HIGH);&nbsp;
+digitalWrite(sol_motor_2, LOW);&nbsp;
+digitalWrite(sag_motor_1, LOW);&nbsp;
+digitalWrite(sag_motor_2, HIGH);&nbsp;
+}&nbsp;
+void geri()&nbsp;
+{&nbsp;
+digitalWrite(sol_motor_1, LOW);&nbsp;
+digitalWrite(sol_motor_2, HIGH);&nbsp;
+digitalWrite(sag_motor_1, HIGH);&nbsp;
+digitalWrite(sag_motor_2, LOW);&nbsp;
+}&nbsp;
+void sol()&nbsp;
+{&nbsp;
+digitalWrite(sol_motor_1, HIGH);&nbsp;
+digitalWrite(sol_motor_2, LOW);&nbsp;
+digitalWrite(sag_motor_1, HIGH);&nbsp;
+digitalWrite(sag_motor_2, LOW);&nbsp;
+}&nbsp;
 
 
 
-void sag()
-{
-digitalWrite(sol_motor_1, LOW);
-digitalWrite(sol_motor_2, HIGH);
-digitalWrite(sag_motor_1, LOW);
-digitalWrite(sag_motor_2, HIGH);
-}
-void dur()
-{
-digitalWrite(sol_motor_1, LOW);
-digitalWrite(sol_motor_2, LOW);
-digitalWrite(sag_motor_1, LOW);
-digitalWrite(sag_motor_2, LOW);
-}
-void loop() {
-if(mySerial.available()){
-data = mySerial.read();
-Serial.println(data);
-}
-if(data == 'F'){
-ileri();
-}
-else if(data == 'B'){
-geri();
-}
-else if(data == 'L'){
-sol();
-}
-else if(data == 'R'){
-sag();
-}
-else if(data == 'S'){
-dur();
-}
-}
+void sag()&nbsp;
+{&nbsp;
+digitalWrite(sol_motor_1, LOW);&nbsp;
+digitalWrite(sol_motor_2, HIGH);&nbsp;
+digitalWrite(sag_motor_1, LOW);&nbsp;
+digitalWrite(sag_motor_2, HIGH);&nbsp;
+}&nbsp;
+void dur()&nbsp;
+{&nbsp;
+digitalWrite(sol_motor_1, LOW);&nbsp;
+digitalWrite(sol_motor_2, LOW);&nbsp;
+digitalWrite(sag_motor_1, LOW);&nbsp;
+digitalWrite(sag_motor_2, LOW);&nbsp;
+}&nbsp;
+void loop() {&nbsp;
+if(mySerial.available()){&nbsp;
+data = mySerial.read();&nbsp;
+Serial.println(data);&nbsp;
+}&nbsp;
+if(data == 'F'){&nbsp;
+ileri();&nbsp;
+}&nbsp;
+else if(data == 'B'){&nbsp;
+geri();&nbsp;
+}&nbsp;
+else if(data == 'L'){&nbsp;
+sol();&nbsp;
+}&nbsp;
+else if(data == 'R'){&nbsp;
+sag();&nbsp;
+}&nbsp;
+else if(data == 'S'){&nbsp;
+dur();&nbsp;
+}&nbsp;
+}&nbsp;
